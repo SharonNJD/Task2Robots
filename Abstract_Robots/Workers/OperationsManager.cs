@@ -8,7 +8,10 @@ namespace Robots_inc
 {
     public class OperationManager : Worker
     {
-        //1. השלימות את התכונות החסרות
+        private double Hourlywage;
+        private int Hours;
+        private int tasksCompleted;
+
 
         public OperationManager(string name, string id, DateTime bDate, string pass, ....)
             : base(name, id, bDate, pass)
