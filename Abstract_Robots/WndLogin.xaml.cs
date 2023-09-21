@@ -46,7 +46,7 @@ namespace Robots_inc
         public  List<Worker> ListOfWorkers()
         {
             workers = new List<Worker>();
-            workers.Add(new GeneralManager("sharon", "BigBoss", DateTime.Parse("08/12/2006"), "IHateN", 100000000, 50));
+            workers.Add(new GeneralManager("sharon", "BigBoss", DateTime.Parse("21/09/2006"), "IHate", 100000000, 50));
             workers.Add(new OperationManager("Ariel", "Iamgingi", DateTime.Parse("21/4/1968"), "Ihatemyself", 50, 729, 6));
             workers.Add(new OperationManager("Idan", "16598156", DateTime.Parse("05/1/1200"), "Itsmylife", 50, 729, 6));
             workers.Add(new OperationalWorker("yakov", "514414551", DateTime.Parse("05/06/1598"), "IloveEldad", 24, 729));
@@ -97,15 +97,16 @@ namespace Robots_inc
             
             foreach (Worker item in workers)
             {
+                Worker worker = item as Worker;
                 if (item.GetidNumber().Equals(tbxID.Text) && item.Getpassword().Equals(tbxPassword.Password))
                 {
-                    WndMain main = new WndMain(item, activeMissions, activeRobots, workers);
+                    WndMain main = new WndMain(worker, activeMissions, activeRobots, workers);
                     main.ShowDialog();
                 }
                 
             }
             MessageBox.Show("Not correct");
-            //...אם מספר הזיהוי והסיסמה תואמים לעובד ברשימה, אז
+           
 
 
 

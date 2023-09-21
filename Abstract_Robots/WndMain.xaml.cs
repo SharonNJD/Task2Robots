@@ -32,6 +32,7 @@ namespace Robots_inc
             activeRobots = lr;
             this.DataContext = null;
             this.DataContext = worker = w;
+            LoadWorkerInfo();
         }
 
         private void LoadWorkerInfo()
@@ -61,6 +62,17 @@ namespace Robots_inc
                     break;
             }
 
+        }
+
+        private void ViewWorkers_Click(object sender, RoutedEventArgs e)
+        {
+            workPanel.Children.Clear();
+            activeWorkers.ForEach(worker =>
+            {
+                UcWorker ucworker = new UcWorker(worker);
+                workPanel.Children.Add(ucworker);
+
+            });
         }
     }
 }
